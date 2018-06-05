@@ -1,0 +1,22 @@
+#!/bin/bash
+#Menu
+
+echo -e "\e[94m============================================================================================"
+echo -e "\e[94m= menu      : menampilkan daftar perintah"
+echo -e "\e[94m= buat      : membuat akun"
+echo -e "\e[94m= tambah    : menambah masa aktif akun"
+echo -e "\e[94m= trial     : membuat akun trial"
+echo -e "\e[94m= expired   : menghapus akun expired"
+echo -e "\e[94m= hapus     : menghapus akun"
+echo -e "\e[94m= cek       : cek user login"
+echo -e "\e[94m= member    : daftar member"
+echo -e "\e[94m= resvis    : restart service dropbear, webmin, squid3, OpenVPN dan SSH"
+echo -e "\e[94m= reboot    : reboot VPS"
+echo -e "\e[94m= speedtest : speedtest VPS"
+echo -e "\e[94m= info      : menampilkan informasi sistem"
+echo -e "\e[94m= about     : info script auto install"
+echo -e "\e[94m= exit      : keluar dari Putty/Connecbot/JuiceSSH"
+echo -e "\e[94m============================================================================================"
+echo -e "\e[94m= Script by Jajan Online"
+echo -e "\e[94m= Whats App 08994422537"
+echo -e "\e[94m============================================================================================"
