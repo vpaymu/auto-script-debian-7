@@ -1,7 +1,11 @@
 #!/bin/bash
-# Script restart service dropbear, webmin, squid3, openvpn, openssh
-# Created by Bustami Arifin
-service dropbear restart
+# ========================================
+#           Original Script By            
+#   Jajan Online - Whats App 08994422537  
+# ========================================
+
+service dropbear stop
+service dropbear start
 service stunnel4 restart
 service webmin restart
 service php5-fpm restart

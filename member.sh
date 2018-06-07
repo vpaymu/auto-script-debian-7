@@ -1,19 +1,34 @@
 #!/bin/bash
-echo "-------------------------------"
-echo "USERNAME          EXP DATE     "
-echo "-------------------------------"
+# ========================================
+#           Original Script By            
+#   Jajan Online - Whats App 08994422537  
+# ========================================
+echo ""
+echo "=========================================================== "
+echo "                         Daftar Akun                        "
+echo "=========================================================== "
+echo ""
+echo "=========================================================== "
+echo "USERNAME        TANGGAL EXPIRED                             "
+echo "=========================================================== "
 while read expired
 do
         AKUN="$(echo $expired | cut -d: -f1)"
         ID="$(echo $expired | grep -v nobody | cut -d: -f3)"
         exp="$(chage -l $AKUN | grep "Account expires" | awk -F": " '{print $2}')"
-        if [[ $ID -ge 1000 ]]; then
+        if [[ $ID -ge 500 ]]; then
         printf "%-17s %2s\n" "$AKUN" "$exp"
-        fi
+		fi
 done < /etc/passwd
-JUMLAH="$(awk -F: '$3 >= 1000 && $1 != "nobody" {print $1}' /etc/passwd | wc -l)"
-echo "-------------------------------"
+
+JUMLAH="$(awk -F: '$3 >= 500 && $1 != "nobody" {print $1}' /etc/passwd | wc -l)"
+
+echo "=========================================================== "
 echo "Jumlah akun: $JUMLAH user"
-echo "-------------------------------"
-echo -e "Script by Jajan Online, Whats App 0899442537"
-echo -e ""
+echo "=========================================================== "
+echo ""
+echo "=========================================================== "
+echo "                     Original Script by                     "
+echo "            Jajan Online - Whats App 08994422537            "
+echo "=========================================================== "
+

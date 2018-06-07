@@ -1,7 +1,10 @@
 #!/bin/bash
-#Script untuk menghapus user SSH & OpenVPN
+# ========================================
+#           Original Script By            
+#   Jajan Online - Whats App 08994422537  
+# ========================================
 
-read -p "Nama user SSH yang akan dihapus : " Pengguna
+read -p "Hapus User : " Pengguna
 
 if getent passwd $Pengguna > /dev/null 2>&1; then
         userdel $Pengguna

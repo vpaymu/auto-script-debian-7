@@ -1,5 +1,8 @@
 #!/bin/bash
-# Program untuk membatasi jumlah login user dropbear
+# ========================================
+#           Original Script By            
+#   Jajan Online - Whats App 08994422537  
+# ========================================
 PARAM=$1
 
 echo "Semua user dropbear yang login lebih dari $1 akan di kill"

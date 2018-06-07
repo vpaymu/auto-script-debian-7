@@ -58,11 +58,11 @@ apt-get update
 apt-get install neofetch
 
 echo "clear" >> .bashrc
-echo 'echo -e "\e[94m============================================================"'
-echo 'echo -e "\e[94m= Selamat datang di server $HOSTNAME                       ="' >> .bashrc
-echo 'echo -e "\e[94m= Script by Jajan Online, Whats App 08994422537            ="' >> .bashrc
-echo 'echo -e "\e[94m= Ketik menu untuk menampilkan daftar perintah             ="' >> .bashrc
-echo 'echo -e "\e[94m============================================================"' >> .bashrc
+echo 'echo -e "\e[94m ========================================================== "' >> .bashrc
+echo 'echo -e "\e[94m Selamat datang di server $HOSTNAME                         "' >> .bashrc
+echo 'echo -e "\e[94m Script by Jajan Online, Whats App 08994422537              "' >> .bashrc
+echo 'echo -e "\e[94m Ketik menu untuk menampilkan daftar perintah               "' >> .bashrc
+echo 'echo -e "\e[94m ========================================================== "' >> .bashrc
 
 # install webserver
 cd
@@ -162,10 +162,11 @@ wget -O tambah "https://raw.githubusercontent.com/vhandhu/auto-script-debian-7/m
 wget -O trial "https://raw.githubusercontent.com/vhandhu/auto-script-debian-7/master/trial.sh"
 wget -O hapus "https://raw.githubusercontent.com/vhandhu/auto-script-debian-7/master/hapus.sh"
 wget -O expired "https://raw.githubusercontent.com/vhandhu/auto-script-debian-7/master/expired.sh"
+wget -O expiredlist "https://raw.githubusercontent.com/vhandhu/auto-script-debian-7/master/expiredlist.sh"
 wget -O cek "https://raw.githubusercontent.com/vhandhu/auto-script-debian-7/master/cek.sh"
 wget -O member "https://raw.githubusercontent.com/vhandhu/auto-script-debian-7/master/member.sh"
 wget -O resvis "https://raw.githubusercontent.com/vhandhu/auto-script-debian-7/master/resvis.sh"
-wget -O limit "https://github.com/vhandhu/auto-script-debian-7/raw/master/user-limit.sh"
+wget -O limit "https://github.com/vhandhu/auto-script-debian-7/raw/master/limit.sh"
 wget -O speedtest "https://raw.githubusercontent.com/vhandhu/auto-script-debian-7/master/speedtest_cli.py"
 wget -O about "https://raw.githubusercontent.com/vhandhu/auto-script-debian-7/master/about.sh"
 echo "cat /root/log-install.txt" | tee info
@@ -178,6 +179,7 @@ chmod +x tambah
 chmod +x trial
 chmod +x hapus
 chmod +x expired
+chmod +x expiredlist
 chmod +x cek
 chmod +x member
 chmod +x resvis
@@ -202,48 +204,39 @@ echo "unset HISTFILE" >> /etc/profile
 
 # info
 clear
-echo -e "\e[94m============================================================================================" | tee -a log-install.txt
-echo -e "\e[94m= Layanan yang diaktifkan" | tee -a log-install.txt
-echo -e "\e[94m============================================================================================" | tee -a log-install.txt
-echo -e "\e[94m= Service"  | tee -a log-install.txt
-echo -e "\e[94m============================================================================================" | tee -a log-install.txt
-echo -e "\e[94m= OpenSSH  : 22, 143"  | tee -a log-install.txt
-echo -e "\e[94m= Dropbear : 109, 443"  | tee -a log-install.txt
-echo -e "\e[94m= SSL      : 442"  | tee -a log-install.txt
-echo -e "\e[94m= Squid3   : 80, 8080 (limit to IP SSH)"  | tee -a log-install.txt
-echo -e "\e[94m= OpenVPN  : TCP 1194 (client config : http://$MYIP:81/client.ovpn)"  | tee -a log-install.txt
-echo -e "\e[94m= badvpn   : badvpn-udpgw port 7300"  | tee -a log-install.txt
-echo -e "\e[94m= nginx    : 81"  | tee -a log-install.txt
-echo -e "\e[94m============================================================================================" | tee -a log-install.txt
-echo -e "\e[94m= Script"  | tee -a log-install.txt
-echo -e "\e[94m============================================================================================" | tee -a log-install.txt
-echo -e "\e[94m= menu      :(Menampilkan daftar perintah yang tersedia)"  | tee -a log-install.txt
-echo -e "\e[94m= buat      :(Membuat Akun SSH)"  | tee -a log-install.txt
-echo -e "\e[94m= tambah    :(Menambah masa aktif)"  | tee -a log-install.txt
-echo -e "\e[94m= trial     :(Membuat Akun Trial)"  | tee -a log-install.txt
-echo -e "\e[94m= hapus     :(Menghapus Akun SSH)"  | tee -a log-install.txt
-echo -e "\e[94m= expired   :(Menghapus Akun Expired)"  | tee -a log-install.txt
-echo -e "\e[94m= cek       :(Cek User Login)"  | tee -a log-install.txt
-echo -e "\e[94m= member    :(Cek Member SSH)"  | tee -a log-install.txt
-echo -e "\e[94m= resvis    :(Restart Service dropbear, webmin, squid3, stunnel4, openvpn dan ssh)"  | tee -a log-install.txt
-echo -e "\e[94m= limit     :(limit akun)"  | tee -a log-install.txt
-echo -e "\e[94m= reboot    :(Reboot VPS)"  | tee -a log-install.txt
-echo -e "\e[94m= speedtest :(Speedtest VPS)"  | tee -a log-install.txt
-echo -e "\e[94m= info      :(Menampilkan Informasi Sistem)"  | tee -a log-install.txt
-echo -e "\e[94m= about     :(Informasi tentang script auto install)"  | tee -a log-install.txt
-echo -e "\e[94m============================================================================================" | tee -a log-install.txt
-echo -e "\e[94m= Fitur lain"  | tee -a log-install.txt
-echo -e "\e[94m============================================================================================" | tee -a log-install.txt
-echo -e "\e[94m= Webmin   : http://$MYIP:10000/"  | tee -a log-install.txt
-echo -e "\e[94m= Timezone : Asia/Jakarta (GMT +7)"  | tee -a log-install.txt
-echo -e "\e[94m= IPv6     : [off]"  | tee -a log-install.txt
-echo -e "\e[94m============================================================================================" | tee -a log-install.txt
-echo -e "\e[94m= Original Script by Jajan Online"  | tee -a log-install.txt
-echo -e "\e[94m= Whats App 08994422537"  | tee -a log-install.txt
-echo -e "\e[94m============================================================================================" | tee -a log-install.txt
-echo -e "\e[94m= Log Instalasi --> /root/log-install.txt"  | tee -a log-install.txt
-echo -e "\e[94m============================================================================================" | tee -a log-install.txt
-echo "VPS AUTO REBOOT TIAP JAM 12 MALAM"  | tee -a log-install.txt
-echo -e "\e[94m============================================================================================" | tee -a log-install.txt
+echo -e "\e[94m ========================================================== "  | tee -a log-install.txt
+echo -e "\e[94m Layanan yang diaktifkan                                    "  | tee -a log-install.txt
+echo -e "\e[94m ========================================================== "  | tee -a log-install.txt
+echo -e "\e[94m OpenVPN       : http://$MYIP:81/client.ovpn)               "  | tee -a log-install.txt
+echo -e "\e[94m Port OpenSSH  : 22, 143                                    "  | tee -a log-install.txt
+echo -e "\e[94m Port Dropbear : 109, 110, 443                              "  | tee -a log-install.txt
+echo -e "\e[94m SquidProxy    : 80, 8080, 8888, 3128 (limit to IP SSH)     "  | tee -a log-install.txt
+echo -e "\e[94m Nginx         : 81                                         "  | tee -a log-install.txt
+echo -e "\e[94m badvpn        : badvpn-udpgw port 7300                     "  | tee -a log-install.txt
+echo -e "\e[94m Webmin        : http://$MYIP:10000/                        "  | tee -a log-install.txt
+echo -e "\e[94m vnstat        : http://$MYIP:81/vnstat/                    "  | tee -a log-install.txt
+echo -e "\e[94m MRTG          : http://$MYIP:81/mrtg/                      "  | tee -a log-install.txt
+echo -e "\e[94m Timezone      : Asia/Jakarta                               "  | tee -a log-install.txt
+echo -e "\e[94m Fail2Ban      : [on]                                       "  | tee -a log-install.txt
+echo -e "\e[94m IPv6          : [off]                                      "  | tee -a log-install.txt
+echo -e "\e[94m ========================================================== "  | tee -a log-install.txt
+echo -e "\e[94m Menu       : Menampilkan daftar perintah yang tersedia     "  | tee -a log-install.txt
+echo -e "\e[94m Speedtest  : untuk cek speed vps                           "  | tee -a log-install.txt
+echo -e "\e[94m Mem        : untuk melihat pemakaian ram                   "  | tee -a log-install.txt
+echo -e "\e[94m Bench      : untuk melihat performa vps                    "  | tee -a log-install.txt
+echo -e "\e[94m Buat       : untuk membuat akun baru                       "  | tee -a log-install.txt
+echo -e "\e[94m Member     : untuk melihat daftar akun dan masa aktifnya   "  | tee -a log-install.txt
+echo -e "\e[94m Limit      : untuk kill akun yang login lebih dari limit   "  | tee -a log-install.txt
+echo -e "\e[94m              Contoh : limit 1                              "  | tee -a log-install.txt
+echo -e "\e[94m Cek        : untuk melihat user yang sedang login          "  | tee -a log-install.txt
+echo -e "\e[94m Expiredlist: untuk melihat daftar akun expired             "  | tee -a log-install.txt
+echo -e "\e[94m Expired    : untuk menghapus user yang expired             "  | tee -a log-install.txt
+echo -e "\e[94m Hapus      : untuk menghapus user                          "  | tee -a log-install.txt
+echo -e "\e[94m Trial      : untuk membuat akun trial selama 1 hari        "  | tee -a log-install.txt
+echo -e "\e[94m Tambah     : untuk memperpanjang masa aktif akun           "  | tee -a log-install.txt
+echo -e "\e[94m Resvis     : untuk merestart dropbear dan squid            "  | tee -a log-install.txt
+echo -e "\e[94m Info       : untuk melihat ulang informasi ini             "  | tee -a log-install.txt
+echo -e "\e[94m About      : Informasi script                              "  | tee -a log-install.txt
+echo -e "\e[94m ========================================================== "  | tee -a log-install.txt
 cd
 rm -f /root/debian7.sh

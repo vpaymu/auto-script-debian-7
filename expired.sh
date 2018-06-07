@@ -1,6 +1,8 @@
 #!/bin/bash
-# Script Auto Installer by Jajan Online
-# Whats App 08994422537
+# ========================================
+#           Original Script By            
+#   Jajan Online - Whats App 08994422537  
+# ========================================
 
 echo "" > /root/infouser.txt
 echo "" > /root/expireduser.txt
@@ -39,9 +41,4 @@ for((i=1; i<=$totalaccounts; i++ ))
        passwd -l $username
 	   userdel $username
        fi
-done
-echo " "
-echo ""
-echo "Hapus User Expired Berhasil !!!"
-echo " "
-echo " " 
+done 
