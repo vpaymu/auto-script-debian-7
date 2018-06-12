@@ -57,7 +57,7 @@ curl -L "https://bintray.com/user/downloadSubjectPublicKey?username=bintray" -o 
 apt-get update
 apt-get install neofetch
 
-echo "clear" >> .bashrc
+echo "" >> .bashrc
 echo 'echo -e "\e[94m ========================================================== "' >> .bashrc
 echo 'echo -e "\e[94m Selamat datang di server $HOSTNAME                         "' >> .bashrc
 echo 'echo -e "\e[94m Script by Jajan Online, Whats App 08994422537              "' >> .bashrc
